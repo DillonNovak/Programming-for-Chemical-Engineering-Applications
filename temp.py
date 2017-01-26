@@ -4,3 +4,4 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
 plt.plot([0.5,2,3,8,1],[1,2,4,6,1])
+plt.ylim([0,20])
