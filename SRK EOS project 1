@@ -6,21 +6,28 @@ from scipy.integrate import odeint
 plt.plot([0.5,2,3,8,1],[1,2,4,6,1])
 
 
-### Soave Redlich-Kwong equation 
+### Soave Redlich-Kwong equation of state
 #
-#   P = (RT)/(Vm-b) - a/(Vm(Vm+b))
+#   P = (RT)/(V-b) - a/(V(V+b))
 #
-#   a = 0.42747
+#   a = 0.42748*((R*Tc)^2/Pc)*(1+m*(1-sqrt(Tr))**2
+#   b = 0.08664*((R*Tc)/Pc)
+#   
+#   Tr = T/Tc
+#   m = 0.480 + 1574*w - 0.176*w**2  
 #
 
 # declare variables
-P = 273     # pressure (MPa)
+P = 14.7     # pressure (bar)
 R = 8.314   # gass constant (J/mol*K)
-T = 273     # temperature (K)
+T = 298     # temperature (K)
 
-Tc = 200 # K
-Pc = 20 
+# Ethane's critical parameters
+Tc = 305.556    # critical temp (K)
+Pc = 20         # critical pressure (bar)
+w = 0.1064      # acentric factor
 
+# Define functions
 def a(R,Tc,Pc):
     q = 0.42747*(R*(T**2)/(Pc**2)
     return 0
